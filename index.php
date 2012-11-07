@@ -13,7 +13,6 @@
  * http://www.topsitemakers.com/
  */
 
-// Get markdown
 require 'markdown.php';
 
 if ($_POST) {
@@ -69,7 +68,7 @@ input[type=submit] {
 </head>
 <body>
 
-<form action="/playground/markdown/" method="post">
+<form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post">
   
   <div class="row">
     <?php if ($_POST): ?>
