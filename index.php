@@ -13,6 +13,9 @@
  * http://www.topsitemakers.com/
  */
 
+// Prevent XSS via $_SERVER['PHP_SELF']
+$php_self = filter_input(INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_URL);
+
 require 'markdown.php';
 
 if ($_POST) {
@@ -34,7 +37,7 @@ if ($_POST) {
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Markdown processor</title>
+<title>Markdown convertor</title>
 <style type="text/css">
 body {
   padding: 0;
@@ -68,13 +71,13 @@ input[type=submit] {
 </head>
 <body>
 
-<form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="<?php print $php_self; ?>" method="post">
   
   <div class="row">
     <?php if ($_POST): ?>
-    <textarea id="input" name="input"><?php print $_POST['input']; ?></textarea>
+    <textarea id="input" name="input" placeholder="Enter your Markdown here"><?php print $_POST['input']; ?></textarea>
     <?php else: ?>
-    <textarea id="input" name="input"></textarea>
+    <textarea id="input" name="input" placeholder="Enter your Markdown here"></textarea>
     <?php endif; ?>
   </div>
   
