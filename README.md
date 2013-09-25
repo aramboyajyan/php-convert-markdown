@@ -7,7 +7,7 @@ It does not perform any security checks and can potentially allow exploits of yo
 
 ### Credits
 
-[Markdown and Extra](http://www.michelf.com/projects/php-markdown/)  
+[PHP Markdown and PHP Markdown Extra](http://michelf.ca/projects/php-markdown/)  
 [Original Markdown](http://daringfireball.net/projects/markdown/)
 
 <hr>
